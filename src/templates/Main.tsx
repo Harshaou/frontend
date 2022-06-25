@@ -8,6 +8,8 @@ import {
 import type { ReactNode } from 'react';
 import React, { useState } from 'react';
 
+import HeaderMenu from './header';
+
 type IMainProps = {
   meta: ReactNode;
   children: ReactNode;
@@ -45,7 +47,8 @@ const Main = (props: IMainProps) => {
                   mr="xl"
                 />
               </MediaQuery>
-              <h1>Header</h1>
+              {/* <h1>Header</h1> */}
+              <HeaderMenu />
             </div>
           </Header>
         }

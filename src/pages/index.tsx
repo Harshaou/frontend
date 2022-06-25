@@ -1,21 +1,11 @@
-import { Box, Button, Checkbox, Group, TextInput } from '@mantine/core';
-import { useForm } from '@mantine/form';
+/* eslint-disable no-console */
+// import { Box, Button, Checkbox, Group, TextInput } from '@mantine/core';
 
 import { Meta } from '@/layouts/Meta';
+import TextEditor from '@/omponenets/common/TextEditor';
 import { Main } from '@/templates/Main';
 
 const Index = () => {
-  const form = useForm({
-    initialValues: {
-      email: '',
-      termsOfService: false,
-    },
-
-    validate: {
-      email: (value: any) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-    },
-  });
-
   return (
     <Main
       meta={
@@ -25,27 +15,9 @@ const Index = () => {
         />
       }
     >
-      <h1>Heloo folks</h1>
-      <Box sx={{ maxWidth: 300 }} mx="auto">
-        <form onSubmit={form.onSubmit((values: any) => console.log(values))}>
-          <TextInput
-            required
-            label="Email"
-            placeholder="your@email.com"
-            {...form.getInputProps('email')}
-          />
-
-          <Checkbox
-            mt="md"
-            label="I agree to sell my privacy"
-            {...form.getInputProps('termsOfService', { type: 'checkbox' })}
-          />
-
-          <Group position="right" mt="md">
-            <Button type="submit">Submit</Button>
-          </Group>
-        </form>
-      </Box>
+      <div>
+        <TextEditor />
+      </div>
     </Main>
   );
 };
